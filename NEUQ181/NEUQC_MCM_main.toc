@@ -1,0 +1,48 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Restatement of problems}{1}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Other Assumptions}{1}{subsection.1.2}% 
+\contentsline {section}{\numberline {2}Analysis of the Problem}{1}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Question 1}{1}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Question 2}{1}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Question 3}{2}{subsection.2.3}% 
+\contentsline {subsubsection}{\numberline {2.3.1}User friend number analysis}{2}{subsubsection.2.3.1}% 
+\contentsline {subsubsection}{\numberline {2.3.2}User check-in times distribution}{2}{subsubsection.2.3.2}% 
+\contentsline {subsubsection}{\numberline {2.3.3}User check-in location distribution}{2}{subsubsection.2.3.3}% 
+\contentsline {section}{\numberline {3}Solution of the question 1}{2}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}background information }{2}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Network characteristics}{3}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Sequential}{3}{subsubsection.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Measurability}{3}{subsubsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.3}The structure of the Brightkite network }{4}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.3.1}By topology}{4}{subsubsection.3.3.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2}By geographical location }{4}{subsubsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.4}Brightkite network features}{4}{subsection.3.4}% 
+\contentsline {section}{\numberline {4}Solution of question 2}{5}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}background information }{5}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}General }{5}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}In time}{5}{subsubsection.4.2.1}% 
+\contentsline {subsubsection}{\numberline {4.2.2}In space}{5}{subsubsection.4.2.2}% 
+\contentsline {subsubsection}{\numberline {4.2.3}In social aspects}{5}{subsubsection.4.2.3}% 
+\contentsline {subsection}{\numberline {4.3}Data set description}{6}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}User check-in rule analysis }{6}{subsection.4.4}% 
+\contentsline {subsubsection}{\numberline {4.4.1}User friend number distribution }{7}{subsubsection.4.4.1}% 
+\contentsline {subsubsection}{\numberline {4.4.2}User check-in times distribution.}{8}{subsubsection.4.4.2}% 
+\contentsline {subsubsection}{\numberline {4.4.3}User check-in location distribution}{9}{subsubsection.4.4.3}% 
+\contentsline {subsubsection}{\numberline {4.4.4}The coordinate figure}{10}{subsubsection.4.4.4}% 
+\contentsline {subsubsection}{\numberline {4.4.5}User movement cycle analysis }{11}{subsubsection.4.4.5}% 
+\contentsline {subsubsection}{\numberline {4.4.6} The summary of this chapter }{13}{subsubsection.4.4.6}% 
+\contentsline {section}{\numberline {5}Solution of question 3 }{14}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Question analysis}{14}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Friends network}{14}{subsection.5.2}% 
+\contentsline {subsubsection}{\numberline {5.2.1}Theoretical basis}{15}{subsubsection.5.2.1}% 
+\contentsline {subsection}{\numberline {5.3} The relationship between friends and geographical location}{15}{subsection.5.3}% 
+\contentsline {subsubsection}{\numberline {5.3.1}Co-check-in of users}{16}{subsubsection.5.3.1}% 
+\contentsline {subsubsection}{\numberline {5.3.2}Variable-scale regional network division}{16}{subsubsection.5.3.2}% 
+\contentsline {subsubsection}{\numberline {5.3.3}Prediction of friendship based on the number of co-check-in zones}{16}{subsubsection.5.3.3}% 
+\contentsline {section}{\numberline {6}Reference}{17}{section.6}% 
+\contentsline {section}{\numberline {7}Strengths and weaknesses}{18}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Strengths}{18}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Weaknesses}{18}{subsection.7.2}% 
+\contentsline {section}{\numberline {8}Conclusions}{18}{section.8}% 
+\contentsline {section}{Appendices}{19}{section*.2}% 
+\contentsline {section}{Appendix \numberline {A}Second appendix}{19}{Appendix.a.A}% 

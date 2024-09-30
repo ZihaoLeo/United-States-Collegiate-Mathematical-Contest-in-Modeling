@@ -1,0 +1,461 @@
+\documentclass{mcmthesis}
+\mcmsetup{%CTeX = false,                       %% 使用 CTeX 套装时，设置为 true
+        tcn = NEUQ181, problem = A,             %% tcn is team control number
+        sheet = true, titleinsheet = true,    %% sheet stands for summary sheet
+        titlepage = false, abstract = true}    %% titlepage represents abstract page, true or false
+
+%\usepackage{palatino}   %%COMAP官方版物字体
+%\usepackage{times}      %%罗马字体，只对正文起作用
+\usepackage{txfonts}     %%数学公式罗马字体，对公式和正文都起作用
+
+
+
+\title{Online social network information dissemination based on geographic factors }
+\author{\team}
+\date{\today}
+\begin{document}
+
+
+\begin{summary}
+With the popularity of mobile location devices (mainly GPS-enabled smartphones) and the development of social networking sites, online social networking sites tend to integrate with location services and eventually develop into location-based social networks (Location-Based Social Network, LBSN). As a new online social network, LBSN can obtain users' current geographical location and provide users with personalized services corresponding to the location. In LBSN, users can find their friends near their location, search for content tagged with location, record and share information such as geographical location anytime and anywhere.
+
+ LBSN has created a new online interaction mode based on users' geographical location. In addition to maintaining users' connections in the virtual network like traditional social networks, it can also strengthen users' connections with the real world through real location information.
+One of the most popular LBSN applications is the location check-in (Location Check-in Service, LCS), users can post their current location at the same time they check in, comment on the check-in location or share their check-in location with friends. On the hot social applications, provide check-in services abroad mainly Fourquare, Gowalla and Brightkite, and domestic JiePang, DiGu, QieKe, etc. These check-in application, on the one hand, attract users to sign in through some virtual rewards, such as the title or points ; On the other hand, the user's check-in time series and movement track correspond to the geographic location information in the real world, so as to realize the integration of user behavior and real geographic information and create a more extensive and close relationship between users and the real world.
+
+In recent years, location-based social networks have developed rapidly and attracted a large number of active users. Major social platforms have collected a large number of user status updates with location information. For example, in the location-based check-in application, the user check-in record collected contains information such as the user's check-in time, the geographic coordinates of the user's check-in place (usually expressed by latitude and longitude), which provides data support for researchers to analyze user behavior from the perspective of geographic location.  In addition, in the face of LBSN's large amount of user location information and the existing social network relationships among users, researchers have carried out a lot of research work, such as community discovery, privacy protection, friend prediction and place recommendation.
+
+
+
+
+\noindent
+\textbf{Key Words:}
+Variable-scale network partitioning; Location Check-in Service
+; Brightkite;
+
+\end{summary}
+
+
+\maketitle
+
+
+
+%\newpage
+%\thispagestyle{empty}
+%\begin{center}
+%\bfseries\Large
+%Synopsis/Memo/Handout
+%\end{center}
+%
+%This is Synopsis/Memo/Handout.
+
+
+
+
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\section{Introduction}
+
+\subsection{Restatement of problems}
+
+
+
+
+
+
+\begin{itemize}
+\item 	Question1: Describe the basic properties, characteristics and structure of brightkite network over the period of Apr. 2008 - Oct. 2010.
+\item 	Question2: Explore the implicit dynamics behaviors of people through their check-in times, and divide time into annually, monthly and even weekly analysis to find out the pattern of their behaviors.
+\item 	Question3: Develop a model to predict the information check in process of brightkite network users.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+\subsection{Other Assumptions}
+D. E. Knuth \cite{Knuth},
+the author of \textit{the Art of Computer Programming},
+is a very famous computer scientist,
+now living at Stanford University.
+
+
+
+
+\section{Analysis of the Problem}
+
+\subsection{Question 1}
+Brightkite network has collected a large amount of user check-in information, which records the user check-in time, check-in place and check-in place ID in detail, so that researchers can start from the perspective of geographical location and conduct effective analysis on user movement behavior. The emergence of LBSN combines the virtual network with the real world and presents a new feature dimension. In addition, position is an important characteristic of LBSN, including absolute position (latitude and longitude coordinates); Relative position (500m east side of shopping mall); Semantic location (home, unit, restaurant, etc.). According to the location information, users' interests and mobile behavior patterns can be effectively mined. Brightkite networks are sequential, hierarchical, and measurable.
+\subsection{Question 2}
+\begin{itemize}
+\item 		Based on the analysis of user behavior characteristics in the Brightkite data set, such as the number of users' friends, check-in locations and check-in times, it was found that there was a long tail distribution, and users with more than 50 friends in the two networks accounted for a very small proportion. In Brightkite, the number of signings less than 10 reached 43.5\%, which further indicated the sparsity of data and brought new challenges to friend prediction.
+\item 		Using the time and space information of user check-in, the paper analyzes the user movement area and movement period, and then mines the user movement rule. When analyzing the moving area, it is found that most users are only active in a small range. According to the analysis of the mobile cycle, user activities show a certain periodicity, which is consistent with people's life rules.
+\item 	Social networks among us users can be extracted from the data set. Where, the node of the network represents the user, while the edge represents the social relationship between the connected nodes, and the weight of the edge is defined as the geographic distance between the users represented by the node. Finally, the social network available from Brightkite has 58228 nodes and 214,078 edges. The distribution of node degree k and edge weight w in these two networks.
+\end{itemize}
+
+\subsection{Question 3}
+\subsubsection{User friend number analysis}
+According to the user id in the check-in table of two data sources of Bnightkite, the data in the corresponding friend table was processed as follows: if the user not in the check-in table appeared in the friend table, all records related to the user in the friend table were deleted to form a new friend table, so as to ensure the consistency of the data.
+\subsubsection{User check-in times distribution}
+Based on the statistics of user check-in times in Brightkite website, the similarity between nodes in the two networks was mined.
+\subsubsection{User check-in location distribution}
+Users may check in at multiple locations, and multiple users may check in at the same location. Based on the analysis of user check-in times, this section conducts statistics of user check-in locations on Brightkite website to explore the rules of user check-in behavior.
+
+\section{Solution of the question 1}
+
+\subsection{background information }
+Nowadays, many location-based social networks are integrating into people's lives, such as Foursquare, Mingle and Brightkite abroad, as well as JiePang and DiGu in China. The rapid development of LBSN has attracted the active participation of a large number of users. Various social platforms have collected a large amount of user check-in information, which records the user check-in time, check-in place and check-in place ID in detail, enabling researchers to conduct effective analysis of user movement behavior from the perspective of geographical location.
+
+\subsection{Network characteristics}
+The research of traditional social networks mainly focuses on the static structure and dynamic evolution of the network. The emergence of LBSN combines the virtual network with the real world and presents a new feature dimension. In addition, position is an important characteristic of LBSN, including absolute position (latitude and longitude coordinates); Relative position (500m east side of shopping mall); Semantic location (home, unit, restaurant, etc.). According to the location information, users' interests and mobile behavior patterns can be effectively mined. The popularity of GPS, wi-fi and other location devices makes it possible to collect location information. The introduction of location dimension into the social network Narrows the distance between the physical world and the social network and enables a deeper understanding of the user's behavior trajectory. In LBSN, users can not only share location information with mobile terminals, but also learn collaborative social information through location content. For example, a user's evaluation of a check-in event can provide a reference for people in their social structure, identifying the most popular restaurants in the city through user location tags. In summary, the Brightkite site is sequential, hierarchical, and measurable.
+\subsubsection{Sequential}
+The specific check-in time is recorded in the user check-in information, and the user's access to the location presents the sequence. This order indicates the user's check-in characteristics and can be used as a measure of user similarity. In addition, the user's internal preferences can be mined by the time interval between the user's access to the location.
+\subsubsection{Measurability}
+By introducing location information attributes, three different distance relationships emerged in Brightkite, namely between users, between users, and between locations. The distance between users will have a certain impact on the user similarity. The distance between users and positions can represent the user's interest in the position, while the correlation between positions can be reflected by the distance between positions. Thanks to the new character of Brightkite, people's life style changed dramatically. The popularity of Brightkite makes it possible to collect users' historical location on a large scale, thus attracting high attention from researchers. Research topics mainly include community mining day, privacy protection, friend prediction and location recommendation. Among them, friend prediction and recommendation has become a hot topic, which can be widely used in the promotion of goods in e-commerce, as well as the expansion of the circle of friends in the real world.
+
+\subsection{The structure of the Brightkite network }
+\subsubsection{By topology}
+The topology of the Brightkite network is a star structure:
+Each station is connected to the central station via a point-to-point link. It is easy to add new sites in the network, the security and priority of the data is easy to control, easy to achieve network monitoring, but the failure of the central node will cause the failure of the entire network.
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=10cm]{xingxingwangluo.png}
+\caption{Star network structure}
+\end{figure}
+
+
+
+\subsubsection{By geographical location }
+The Brightkite network is a wide area network that crosses national, continental, and even global boundaries.
+
+\subsection{Brightkite network features}
+Provide data sets, provided by the user, and collate the data for the user's use. Data used by LBSN is equivalent to the function of database.
+
+\section{Solution of question 2}
+\subsection{background information }
+In real life, geographical location plays an important role in the social relations between people. Due to the limitation of activity scope, people mainly check in around the residence. Therefore, people in the same range tend to have more daily contact and some kind of social relationship. In other words, users' social relationships can be represented by the attributes of their movement trajectories. If two people often check in at the same place at a similar time interval, they may be colleagues in social relations, and the potential meaning is to go to work at the same unit at the same time.
+\subsection{General }
+This paper will analyze the check-in data of users from three aspects of time, space and social interaction.
+\subsubsection{In time}
+Using the check-in data, this paper discusses how the time attribute affects the check-in behavior and the movement behavior of users. Since people carry out daily activities in accordance with a certain life rule, user check-in behavior and mobile behavior are bound to change regularly with time. Therefore, a week can be divided into working days and rest days, or a day can be divided according to the hour and moment, so as to analyze the relationship between users' mobile behavior and check-in behavior from the perspective of time.
+\subsubsection{In space}
+The influence of user space movement on user check-in and user movement behavior was discussed with check-in data. As People's Daily work and life have a certain purpose, their mobile space must follow the corresponding rules. Therefore, by analyzing the user's daily movement trajectory, it can be concluded that the user's check-in and movement behavior change with the space.
+\subsubsection{In social aspects}
+Use the check-in data to explore how the daily social situation of users affects the check-in and mobile behavior. If people have some kind of social relationship in their daily life, there must be some similarity in time track and space track. Therefore, the influence of social relationship on check-in and mobile behavior of two users can be discussed by means of the proportion of overlapping check-ins of two users. In addition to a separate analysis of the above three levels, this paper also combines various factors and proposes a multi-factor fusion prediction method of friendship. For example, the space and time features of user check-in are fully mined to extract the corresponding relationship between them, so as to improve the accuracy of friend prediction and lay a foundation for subsequent friend recommendation and travel route planning.
+\subsection{Data set description}
+The check-in behavior occurred in the location adopted in this paper, whose latitude and longitude were 53 3648119 and -2.2723465833. Each line in the friend list is made up of A pair of user friend ids (user A's id, user B's id), indicating that A and B are friends. Table 5-1 and 5-2 respectively list the format of user check-in record file and friend list file. In the Brightkite data set, there are 58,228 check-in users, and the check-in time from April 2008 to October 2010, the check-in record reached 4.5 million, with a total of 214,078 pairs of friends 1201. When studying the data in the two data sets, each node represents the users, and each edge represents the friend relationship between users. Table 5-3 describes the details of this data set. The specific check-in feature attributes of users have an important impact on the prediction of friend relationship. Through mining the user check-in data information, we can better understand the user's movement behavior, so as to find out the internal factors that affect the movement behavior and the correlation between the factors. Next, this section will analyze the overall characteristics of the user's check-in behavior in terms of the number of friends, check-in place, check-in times and check-in time.
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=10cm]{table1.jpg}
+\caption{table1}
+\end{figure}
+
+\begin{figure}[!ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=5cm]{table2.jpg}
+\caption{table2}
+\end{figure}
+
+\begin{figure}[!ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=6cm]{table3.jpg}
+\caption{table3}
+\end{figure}
+
+
+
+
+
+\subsection{User check-in rule analysis }
+User and location information are important components of LBSN, and the check-in record formed by the combination of the two becomes an important resource for its research. As a common location social network, Brightkite provides a variety of location services. Users can record their behavior track through "check-in", share their favorite geographic location with friends, help friends choose the location they are interested in, and help them predict the relationship between friends.
+The purpose of this paper is to make an in-depth analysis of user check-in behavior in LBSN from the aspects of space, time and frequency, so as to explore the potential relationship between users.
+\subsubsection{User friend number distribution }
+According to the user id in the check-in table of two data sources of Bnightkite, the data in the corresponding friend table was processed as follows: if the user not in the check-in table appeared in the friend table, all records related to the user in the friend table were deleted to form a new friend table, so as to ensure the consistency of the data.
+
+The number of friends in the Brightkite data set is distributed as shown in figure 5-4, where the horizontal axis represents the number of friends and the vertical axis represents the number of users.
+
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=10cm]{dis.jpg}
+\caption{Distribution of users' friends in Brightkite}
+\end{figure}
+
+
+As can be seen from the figure above, the majority of users in the data set have few friends. In Brightkite, the number of friends is less than 15, and the average number of friends is 7.35, among which the number of friends is up to 1134. On the whole, users with more than 50 friends in the network only account for a very small proportion of the total number of users. It can be seen that network links in LBSN are relatively sparse, which brings great challenges to the prediction of similarity between nodes in the future.
+
+
+\subsubsection{User check-in times distribution.}
+This section explores the similarities between nodes in the two networks by counting the number of times users checked in to the Brightkite site. Figure 5-5 is the corresponding check-in times distribution diagram, the x-coordinate is the check-in times, and the y-coordinate is the corresponding number of users. According to statistics, the number of users in the two websites is similar to the number of check-ins. The overall trend is that the number of check-ins decreases as the number of check-ins increases. In Brightkite network, there were 428 users who checked in more than 2000 times, the maximum number of check-in was 2100, and the number of check in less than 10 was 25350, accounting for 43.5\% of the total number of users. It is found that the number of users who check in once is large in the network, which is 7843, accounting for 13.4\%. In this paper, such users are regarded as disloyal users of the system, which adds obstacles to further mining the similarity of nodes.
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=10cm]{2.png}
+\caption{Distribution of check- ins in Brightkite}
+\end{figure}
+
+
+\subsubsection{User check-in location distribution}
+Users may check in at multiple locations, and multiple users may check in at the same location. On the number of users to sign in. Based on the analysis of this section via Brightkite website users sign in place of the statistics, explore users sign in behaviors figure 5-5 describes Brightkite users sign in place for several distribution, from the figure, the number of users sign in site presents the long tail distribution, signed in place as the increase of the number of overall, the total number of users is on the decline. In Brightkite website, there were 48,920 users with less than 100 check-in sites, accounting for 95.2\% of the total number of users, and the maximum number of single users was 1295. The number of users in one site was 8916 and 14049, respectively, accounting for 8.3\% and 27.3\% of the total number of users. This part of users may play a small role in the similarity mining among users, but if the check-in of a place is mainly concentrated on a few users, then the place can provide more prediction information. Therefore, in actual prediction, user check-in locations and user check-in times are usually combined for analysis. When users of Brightkite check in, they usually record all the places they have traveled, so the site records all the places they have traveled in one day. In this paper, the distance between two adjacent coordinates of the user is called a "move" of the user. According to statistics, the number of users who had moved in Brightkite website reached 107092 and 51406 respectively, the total number of movements was 3981334 and 1076169 respectively, and the average number of movements per user was 37.18 and 20.94 respectively.
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=10cm]{1.png}
+\caption{Distribution of check- in location in Brightkite}
+\end{figure}
+
+\subsubsection{The coordinate figure}
+
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=15cm]{zuobiao.eps}
+\caption{User activity scope analysis}
+\end{figure}
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=12cm]{4.eps}
+\caption{User check-in area distribution}
+\end{figure}
+
+
+
+$$L_c lat=\frac{1}{n}\sum_{i=1}^{n}\L_i lat,$$
+$$L_c lon=\frac{1}{n}\sum_{i=1}^{n}\L_i lat,$$
+$$R =\sqrt{\frac{1}{n}\sum_{i=1}^{n}(\L_i lat-\L_c lat)^2+(\L_i lon-\L_c lon)^2}$$
+
+
+
+The mobile location and the mobile radius of the user can reflect the user's daily activities. The mobile radius can be calculated by using equation (2-1). If the moving radius is large, it means that the user usually has a wide range of activities and may often travel a long distance; on the contrary, it means that the user is usually limited to a small range of activities. According to the statistical data on the user activity area, 42,928 users in Brightkite website have a mobile range of less than 10km, accounting for 73.7\% of the total users and 11.8\% of the users over 1000km.
+
+
+
+
+\subsubsection{User movement cycle analysis }
+Since ancient times, people have followed the daily rule of "start from the sun and rest at sunset". In order to explore whether the user movement changes regularly, this paper studies the check-in time in days and weeks. In Brightkite, the check-in time of users is calculated according to the local time. Therefore, in the following analysis, the check-in time is regarded as the uniform time. This section explores the relationship between daily check-in locations and the life cycle of Brightkite users. The user check-in situation of this website was statistically analyzed by taking days as the time period, and it was found that the user check-in times in the two websites presented regular changes with time (see figure 10), where the x-coordinate was the hour point and the y-coordinate was the average check-in times of users in the time interval. In Brightkite, the number of check-in gradually declined from 0:00 to a gradual decline at the beginning. After 4:00, the trend of check-in was more significant until the lowest peak appeared around 10:00 am, then the number of check-in began to rise and reached the peak around 6:00 PM, after which the trend of check-in changed gradually.
+
+From the above analysis, it can be found that the check-in behavior of each time period reflects the movement periodicity of users, and the rule of users using social apps can be seen. Overall, fewer users sign in in the morning, it shows that most users are at work, less work time users of social activities, moving range by limitations: sign-in number above check-in in the morning and whole afternoon that may be associated with each user time different from work, also can show that the user has a habit of sign in after work. With the passage of time, the number of user check-in increased continuously and reached a peak at 6:00 PM, indicating that the number of people leaving work was mainly around 6:00.
+
+
+
+
+\begin{figure}[!ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=12cm]{3.png}
+\caption{Distribution of check-in time in Brightkite( day)}
+\end{figure}
+
+
+
+
+In order to further illustrate the periodic change of users' movement behavior, this paper takes the week as the time cycle to explore, and then seeks the movement rule of users in a week. The average number of times a Brightkite user checked in on different days of the week is shown in figure 11.
+
+
+\begin{figure}[!ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=12cm]{4.png}
+\caption{ Distribution of check- in time in Brightkite (week)}
+\end{figure}
+
+
+
+
+\begin{figure}[!ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=15cm]{month.eps}
+\caption{ Distribution of check- in time in Brightkite (month)}
+\end{figure}
+
+
+\begin{figure}[!ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=15cm]{quarter.eps}
+\caption{ Distribution of check- in time in Brightkite (quarter)}
+\end{figure}
+
+
+From this, it can be seen that the check-in times of each website user from Monday to Thursday are relatively consistent, and the least check-in times on Monday are 9207.18 and 4762.13 respectively. The number of check-in increased significantly on Friday and Saturday, and reached the highest on Saturday, Brightkite was 5411.19. The average number of check-ins on Sunday is 4933.1, which is close to the working day. It can be understood that users mainly rest at home on Sunday and seldom go out for activities, so as to prepare for the beginning of the new week.
+
+\subsubsection{	The summary of this chapter }
+This chapter begins with an introduction to the basics of Brightkite's location-based social network, including data sources, formats, and user check-in and friend records. Then clean the data, delete the user records that do not appear in the check-in record table according to the friends table to ensure the consistency of the data.
+
+Finally, the real check-in behavior of users in the network is analyzed in detail from five aspects: the number of friends, the number of check-in times, the number of check-in places, the radius of user activity area and the period of user movement. In the mobile cycle, time is divided into days and weeks according to people's work and rest rules, so as to explore the user's mobile behavior rules, so as to find that the user's mobile behavior in different time periods has significant differences, reflecting the user's check-in habits, and provide a reliable basis for subsequent experimental analysis.
+
+
+
+\section{Solution of question 3 }
+
+\subsection{Question analysis}
+The site USES the latitude and longitude of the user's location, time of year and number of check-ins to predict whether they are friends or not. Therefore, to solve this problem, it is necessary to link friends with geographical location.
+
+\subsection{Friends network}
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=12cm]{6.png}
+\caption{ table4 }
+\end{figure}
+
+
+
+According to the statistics, most users have fewer friends, while those with more friends are less. Among Brightkite users, 21.5\% had no more than 5 friends, while only 0.64\% had more than 50 friends. The average number of friends was 3.7.
+According to statistics, the number of friends of Brightkite users basically conforms to the power law distribution.
+\subsubsection{Theoretical basis}
+There are various power-law distribution phenomena with different properties in nature and social life. With effective physical and mathematical tools and powerful computing power, scientists have gained a deeper understanding of the nature of power-law distributions. When the sample data is large, the probability density function of variable x is as follows
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=12cm]{7.png}
+\caption{  }
+\end{figure}
+
+
+\subsection{	The relationship between friends and geographical location}
+In real life, individual social relations are constrained by geographical conditions. The activity area of an individual in real life is quite limited, and most of the time it is limited to the surrounding of the place where he lives. The people that an individual can contact in daily life and life, as well as the people who have certain social relations, are often the people who move in the same area with him, that is, they are closely connected with the geographical location.
+
+To a large extent, friendship on social network is the projection of social relations between people in real life on the network. Although users can casually become friends with people they do not know in the real world online, more users tend to add friends with real-life friends on social networks. For example, when we use renren.com, we are more likely to add friends with classmates. So let us go on to explore how social networking relationships are affected by location.
+\subsubsection{Co-check-in of users}
+We first divide the earth's surface into grids by latitude and longitude, and the resulting grid is called a region. This allows the user's check-in location (indicated by latitude and longitude) to be mapped to one of these regions. We define: if two users have checked in in the same region s xs within a given time interval t, then there is a joint check in between the two users. Next, we will explore what is the probability of two users having a good friend relationship if there is a co-check-in behavior between them.
+Due to the fact that the maximum actual distance of 1 degree of longitude and latitude is about 110km, and due to the fact that the GPS positioning of ordinary users' mobile phones has a deviation of tens of meters, the regional grid in this paper is divided up to 0.001 degree of longitude and latitude (about the actual distance of 110 meters) at most.
+\subsubsection{Variable-scale regional network division}
+In previous studies, the geographic division of check-in sites was conducted by using geographic coordinates (latitude and longitude) to conduct grid division on the same scale. For example, in the research of Cranshaw and other researchers, geographical coordinates 0.0002 degree x 0.0002 degree were used to divide regions. However, Crandall et al. adopted the geographic coordinates 0.001 degree x 0.001 degree scale to divide the regions. The disadvantage of this method is that it cannot reflect the nature difference between different regions. The meaning of users meeting in different places is different.
+\subsubsection{Prediction of friendship based on the number of co-check-in zones}
+First, we define the time interval t in the definition of co-check-in as within one day, that is, users who sign in in the same area on the same day are counted as co-check-ins. The number of zones in which two users are co-signed is defined as the number of zones in which two users are co-signed. Next, we observe the effect of using the number of co-check-in areas among users to predict the friendship relationship through different grid division methods (s represents division scale, unit is degree), as shown in figure 15
+
+\begin{figure}[ht]
+\label{fig:1}
+\small
+\centering
+\includegraphics[width=12cm]{8.png}
+\caption{ Brightkite prediction effect based on the number of co-check-in zones }
+\end{figure}
+
+
+The s of the above two figures represents the longitude and latitude of the region division, in degrees. We can see that:
+
+(1)	existence. The co-check-in users are more likely to have good friends. Because if two randomly selected users are in the Brightkite data set, the probability is about 0.0063\%, which is far less than the probability of existing good friends among the co-check-in users.
+
+(2)	the prediction accuracy increases with the increase of the number of co-check-in areas, which indicates that the more the number of co-check-in areas among users, the more likely there is a good friend relationship.
+
+(3)	In the prediction of good relationships, variable scale regions are better. It is worth noting that for grid division of large scale, the prediction effect is poor when the number of co-signed regions is small (for example, when the number of co-signed regions is less than 3, the prediction accuracy of grid division of s= 1 scale is the lowest). When the number of co-signed regions is larger, the effect is better (for example, when the number of co-signed regions is larger than 6, the prediction accuracy of grid division on the scale s= 1 is higher than that on the same scale). To translate this phenomenon into real life, we can understand it in this way. Smaller scales mean that the actual distance between co-check-in users is close, whereas larger scales mean the opposite. The less when common sign in area number, sign in as close to the actual distance means that two users more likely there is a real good friend relationship (for example, is a common sign in colleagues in the same company), and signed in the actual distance may just live in the same city of strangers: when the common sign in area number is large, if the sign in the actual distance is relatively close, is likely to sign in to place are in an area, such as are in the same city mall, places such as cinemas, and sign in the actual distance is likely to be signed in place in several cities and even countries, when the two users in different cities have common sign in behavior, It's probably a case of two friends traveling together, so it's more likely that there's a friendship.
+
+\section{Reference}
+Prediction of friendship based on location social network \_Gao xurui
+Prediction of friends based on location information in social networks \_ Tang siyuan
+
+
+
+
+
+
+\section{Strengths and weaknesses}
+
+
+\subsection{Strengths}
+
+(1) A variable-scale mesh generation method is proposed and verified by experiments. Compared with the same scale mesh generation method, this method is more effective in predicting friend relationship.
+(2) Experimental results show that the more common check-in areas, the more likely there is a friend relationship among users with more common check-in times, and the shorter the time interval of common check-in, the higher the probability of having a friend relationship, which fully indicates the correlation between user's location information and social relationship.
+
+\subsection{Weaknesses}
+
+Users' data on location-based social networking sites are very valuable to study.But be limited by users' privacy and other issues, social networking sites usually only disclose a small amount of users' data and anonymous processing, so that a lot of data which can reflect the characteristics of users' behaviors cannot be obtained. The total amount of users' check-in data on social networking sites is huge, but the vast majority of individual user's check-in data is very sparse, so the reflected user movement track is not complete. Therefore, it is an important task to analyze the user's behavior characteristics and social relationship by obtain the user's complete information and movement track and extract the implied knowledge from it. The research work in this paper can be improved as follows:
+(1) To further study the users' check-in behavior Take into account the user's age, occupation and other personal information,to more fully understand the user habits reflected in the data;
+(2) In analyzing the users' movement trajectory, add the user's professional background, home and company address, Where the city and so on will affect the user travel factor, carries on the more comprehensive analysis;
+(3) More detailed information on the location of the users' check-in, such as whether the location is a restaurant, a cinema or an office building, and semantic labelling of the location, will enable a more detailed understanding of the location's attributes;
+(4) When predicting the relationship of friends among users, consider the age group, interest label and other information of users to achieve better prediction effect.
+
+\section{Conclusions}
+\begin{itemize}
+\item \textbf{Applies widely}\\
+This  system can be used for many types of airplanes, and it also
+solves the interference during  the procedure of the boarding
+airplane,as described above we can get to the  optimization
+boarding time.We also know that all the service is automate.
+\item \textbf{Improve the quality of the airport service}\\
+Balancing the cost of the cost and the benefit, it will bring in
+more convenient  for airport and passengers.It also saves many
+human resources for the airline.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{99}
+\bibitem{Knuth} D.~E. Knuth.  The \TeX{}book,
+the American Mathematical Society and Addison-Wesley Publishing Company, 1984-1986.
+
+\bibitem{Lamport}
+Lamport, Leslie.  \LaTeX{}:``A Document Preparation System'',
+Addison-Wesley Publishing Company, 1986.
+
+\bibitem{latex}
+http://www.latexstudio.net/
+
+
+\bibitem{chinatex}
+http://www.chinatex.org/
+
+\end{thebibliography}
+
+%\hspace{2em}
+\begin{appendices}
+
+
+
+\section{Second appendix}
+
+some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input matlab source:}}
+\lstinputlisting[language=C++]{./code/code1.txt}
+
+\end{appendices}
+\end{document}

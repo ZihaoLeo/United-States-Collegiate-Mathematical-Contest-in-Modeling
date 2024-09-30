@@ -1,0 +1,5 @@
+main.tex是主文件，用PDFLaTeX或XeLaTeX运行，在WinEdt或TeXworks编辑器窗口。
+
+主文件如果用WinEdt打不开，请用TeXworks编辑器打开，按如下操作：
+开始->所有程序->CTeX->MiKTeX->TeXworks，在弹出的窗口菜单打开主文件，
+可在TeXworks窗口运行，亦可将其全部拷至WinEdt窗口保存运行。

@@ -1,0 +1,170 @@
+clear;
+clc;
+load('matlab.mat')
+B(:,1)=A(:,3);
+C=A(:,4);
+B=table2array(B);
+C=table2array(C);
+D=table2array(A(:,2));
+createfigure(C,B);
+createfigure2(C, B);
+figure;
+createfigure3(D);
+figure;
+createfigure4(D);
+
+function createfigure(X1, Y1)
+
+%  figure
+figure1 = figure('WindowState','maximized');
+
+%  axes
+axes1 = axes('Parent',figure1);
+hold(axes1,'on');
+
+% plot
+plot(X1,Y1,'MarkerSize',3,'Marker','.','LineStyle','none','Color',[0 0 1]);
+
+%  ylabel
+ylabel('latitude');
+
+%  xlabel
+xlabel('longitude');
+
+%  title
+title('Brightkite user sign in area distribution');
+%
+ xlim(axes1,[-180 180]);
+ ylim(axes1,[-90 90]);
+box(axes1,'on');
+end
+
+function createfigure2(X2, Y2)
+% figure
+figure1 = figure;
+
+% axes
+axes1 = axes('Parent',figure1);
+hold(axes1,'on');
+
+%  plot
+plot(X2,Y2,'MarkerSize',3,'Marker','.','LineStyle','none','Color',[0 0 1]);
+
+%  ylabel
+ylabel('latitude');
+
+%  xlabel
+xlabel('longitude');
+
+%  title
+title('The American Brightkite user sign in area distribution');
+
+%
+xlim(axes1,[-125 -73]);
+ylim(axes1,[25 49]);
+box(axes1,'on');
+end
+function createfigure3(X3)
+a=0;
+b=0;
+c=0;
+d=0;
+t=0;
+
+for w=1:1:4747287
+    X=char(X3(w));
+    if(X~=' ')
+    if X(1:4)=='2009'
+        t=t+1;
+        switch X(6:7)
+            case '01'
+                a=a+1;
+            case '02'
+                a=a+1;
+            case '03'
+                a=a+1;
+            case '04'
+                b=b+1;
+            case '05'
+                b=b+1;
+            case '06'
+                b=b+1;
+            case '07'
+                c=c+1;
+            case '08'
+                c=c+1;
+            case '09'
+                c=c+1;
+            case '10'
+                d=d+1;
+            case '11'
+                d=d+1;
+            case '12'
+                d=d+1;
+        end
+    end
+    end
+end
+Y3=[a,b,c,d];
+bar(Y3,'Barwidth',0.4);
+ylabel('number');
+xlabel('quarter');
+title('Distribution of check-in time in Brightkite( quarter)');
+
+end
+function createfigure4(X4)
+m=0;
+n=0;
+o=0;
+p=0;
+e=0;
+f=0;
+g=0;
+h=0;
+i=0;
+j=0;
+k=0;
+l=0;
+t=0;
+
+for w=1:1:4747287
+    X=char(X4(w));
+    if(X~=' ')
+    if X(1:4)=='2009'
+        t=t+1;
+        switch X(6:7)
+            case '01'
+                m=m+1;
+            case '02'
+                n=n+1;
+            case '03'
+                o=o+1;
+            case '04'
+                p=p+1;
+            case '05'
+                e=e+1;
+            case '06'
+                f=f+1;
+            case '07'
+                g=g+1;
+            case '08'
+                h=h+1;
+            case '09'
+                i=i+1;
+            case '10'
+                j=j+1;
+            case '11'
+                k=k+1;
+            case '12'
+                l=l+1;
+        end
+    end
+    end
+end
+Y4=[m,n,o,p,e,f,g,h,i,j,k,l];
+bar(Y4,'barwidth',0.4);
+ylabel('number');
+xlabel('month');
+title('Distribution of check-in time in Brightkite( month)');
+
+end
